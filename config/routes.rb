@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
   
-
+#get '/' => 'users#home', :constraints => { :subdomain => /.+/ }
 devise_for :users
     resources :posts do
       resources :comments
     end 
+
  devise_scope :user do 
-    root to: 'users#index'
-    match '/sessions/user', to: 'devise/sessions#create', via: :post
+  match '/sessions/user', to: 'devise/sessions#create', via: :post
+
+   authenticated :user do
+    root to: 'posts#index', as: :authenticated_root
   end
+    
+   unauthenticated do
+    root 'users#home', as: :unauthenticated_root
+  end
+end
   
     resources :sessions
 
@@ -21,7 +29,7 @@ devise_for :users
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'users#home'
+  #root 'users#home'
 
 
 
@@ -29,7 +37,7 @@ devise_for :users
   #get '/signup',  to:   'users#new'
   #post '/signup', to: 'users#create'
   get '/show', to: 'users#show'
-
+  get '/home', to: 'users#home'
   #get    '/login',   to: 'sessions#new'
   #post   '/login',   to: 'sessions#create'
   #delete '/logout',  to: 'sessions#destroy'
