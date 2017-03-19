@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Array(@user).each do |user| %>
+    <h1><%=user.lastname%>'s posts below</h1> 
+      <tr>
+      	<td><%= link_to 'Post1', :controller => :posts, :action => :show %></td>
+      	<td>                           </td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'logout', new_user_path %>
+
+
+<%= link_to 'New_post', new_post_path %>
+<%= link_to 'posts', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
