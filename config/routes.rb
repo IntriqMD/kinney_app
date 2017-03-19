@@ -6,7 +6,7 @@ devise_for :users
       resources :comments
     end 
  devise_scope :user do 
-    #root to: 'static_pages#home'
+    root to: 'users#index'
     match '/sessions/user', to: 'devise/sessions#create', via: :post
   end
   
@@ -21,7 +21,7 @@ devise_for :users
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'users#home'
+  # root 'users#home'
 
 
 
