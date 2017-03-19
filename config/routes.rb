@@ -5,6 +5,10 @@ devise_for :users
     resources :posts do
       resources :comments
     end 
+ devise_scope :user do 
+    #root to: 'static_pages#home'
+    match '/sessions/user', to: 'devise/sessions#create', via: :post
+  end
   
     resources :sessions
 
