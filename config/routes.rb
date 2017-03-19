@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
   
 
+devise_for :users
+    resources :posts do
+      resources :comments
+    end 
+  
+    resources :sessions
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,13 +22,13 @@ Rails.application.routes.draw do
 
 
   get '/contact', to:   'static_pages#contact'
-  get '/signup',  to:   'users#new'
-  post '/signup', to: 'users#create'
+  #get '/signup',  to:   'users#new'
+  #post '/signup', to: 'users#create'
   get '/show', to: 'users#show'
 
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  #get    '/login',   to: 'sessions#new'
+  #post   '/login',   to: 'sessions#create'
+  #delete '/logout',  to: 'sessions#destroy'
 
   get '/show', to: 'posts#show'
   get '/new_post', to: 'posts#new_post'
@@ -24,13 +36,9 @@ Rails.application.routes.draw do
 
   get '/comment', to: 'posts#comment'
    #root 'posts#new'
-   resources :user do
-    resources :posts do
-      resources :comments
-    end 
+   
 
-    resources :sessions
-   end
+
  
 
   # Example of regular route:
