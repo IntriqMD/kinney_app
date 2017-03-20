@@ -1,4 +1,4 @@
-A messaging applicication
+A messaging application
 
 
 * Ruby version 2.3.0
