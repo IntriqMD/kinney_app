@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
 #get '/' => 'users#home', :constraints => { :subdomain => /.+/ }
 devise_for :users, :controllers => { users: 'registrations' }
+    #               :controllers => { sessions: 'sessions' }
     resources :posts do
       resources :comments
     end 
