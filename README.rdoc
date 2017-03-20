@@ -13,6 +13,6 @@ A messaging applicication
 * To install gems > bundle
 
 
-* run test with > rake spec
+* run test with rspec > rake spec
 
 
