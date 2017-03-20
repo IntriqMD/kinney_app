@@ -24,7 +24,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'faker',                   '1.6.6'
 gem 'carrierwave',             '0.11.2'
 gem 'mini_magick',             '4.5.1'
 gem 'fog',                     '1.38.0'
@@ -66,6 +65,7 @@ group :development do
   gem 'listen',                '3.0.8'
   gem 'spring-watcher-listen', '2.0.0'
   gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
 end
 
 group :test do
@@ -73,6 +73,13 @@ group :test do
   gem 'mini_backtrace',     '0.1.3'
   gem 'guard-minitest',     '2.3.1'
   gem 'rspec-rails', '~> 3.5'
+
+ 
+  gem 'faker',                   '1.6.6'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
+
 end
 
 group :production do
