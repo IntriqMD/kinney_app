@@ -3,6 +3,13 @@ A messaging applicication
 
 * Ruby version 2.3.0
 
+* Rails version 4.2.8
+
+* link to heroku > https://kinney-app.herokuapp.com/
+
+* Note heroku doesn't yet display homepage picture #bug
+* To display picture>rails server
+
 * To install gems > bundle
 
 
